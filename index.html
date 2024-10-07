@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+video.MyVideo{
+ position: fixed;
+ right: 0;
+ bottom: 0;
+ min-width: 100%; 
+ min-height: 100%;
+ max-width:100%;
+}
+
+p {
+color: #0404bd;
+text-align: right;
+background: #e7e9eb;
+padding: 10px;
+}
+
+</style>
+<meta charset="UTF-8">
+<title>Simple Free HLS Player</title>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+
+<center>
+<h1> live stream </h1>
+
+<video id="video" width='800px' height='500px' controls autoplay></video>
+
+<script>
+if (Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource('http://45.135.243.211:1935/live/moradi/playlist.m3u8');
+    hls.attachMedia(video);
+} else {
+    alert("Cannot stream HLS, use another video source");
+}
+</script>
+</center>
+<p>
+فیلم دث استروک: شوالیه ها و اژدهایان، فیلمی انیمیشن، اکشن، ماجراجویی و علمی تخیلی محصول سال ۲۰۲۰ کشور آمریکا به کارگردانی سونگ جین آن است و نویسندگی آن برعهده جی ام دی ماتیس بوده و بازیگرانی چون مایکل چیکلیس، ساشا الکساندر، کریس جی الکس، فای ماتا، گریفین پواتو، نوشیر دالال، کاستولو گوئرا و پانتا مصلح در آن به صداپیشگی پرداخته‌اند.
+</p>
+</body>
+</html>
+
